@@ -1,6 +1,6 @@
-package com.parser.entity
+package com.velmie.parser.entity
 
-data class ParserResponseEntity<T>(val data: T?, val errors: Array<ErrorMessageEntity>) {
+data class ParserResponseEntity<T>(val data: T?, val errors: Array<ParserMessageEntity>) {
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
