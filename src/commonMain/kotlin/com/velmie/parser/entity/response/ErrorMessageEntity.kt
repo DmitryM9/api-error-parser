@@ -1,6 +1,6 @@
-package com.parser.entity.response
+package com.velmie.parser.entity.response
 
-data class ApiErrorMessageEntity(
+data class ErrorMessageEntity(
     val code: String,
     val target: String,
     val source: ErrorSourceInterface?,
