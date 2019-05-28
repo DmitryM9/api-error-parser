@@ -1,13 +1,14 @@
 buildscript {
     repositories {
-        mavenCentral()
+        google()
         jcenter()
+        maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
     }
 }
 
 plugins {
     id 'kotlin-multiplatform' version '1.3.21'
-    id 'kotlinx-serialization' version '1.3.30'
+    id 'kotlinx-serialization' version '1.3.21'
 }
 
 group 'com.velmie'
@@ -21,12 +22,12 @@ kotlin {
         // artifacts are published to this repository
         maven { url "https://kotlin.bintray.com/kotlinx" }
     }
+
     jvm()
-    // This is for iPhone emulator
-    // Switch here to iosArm64 (or iosArm32) to build library for iPhone device
     iosX64("ios") {
         compilations.main.outputKinds("framework")
     }
+    js("nodeJs")
 
     sourceSets {
         commonMain {
@@ -45,6 +46,7 @@ kotlin {
             dependencies {
                 implementation kotlin('stdlib')
             }
+
         }
         jvmTest {
             dependencies {
@@ -52,9 +54,16 @@ kotlin {
                 implementation kotlin('test-junit')
             }
         }
-        iosMain {
+
+        iosMain {}
+        iosTest {}
+
+        nodeJsMain {
+            dependencies {
+                implementation kotlin("stdlib-js")
+            }
         }
-        iosTest {
+        nodeJs {
         }
     }
 }

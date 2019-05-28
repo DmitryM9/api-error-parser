@@ -1,3 +1,4 @@
+/*
 package com.velmie.parser
 
 import com.velmie.parser.entity.ParserMessageEntity
@@ -100,4 +101,4 @@ data class ErrorSourceEntity(override val field: String? = null) : ErrorSourceIn
 
 @Serializable
 private data class ResponseEntity(override val data: DataEntity?, override val errors: List<ErrorMessageEntity>) :
-    ResponseInterface<DataEntity>
+    ResponseInterface<DataEntity>*/
