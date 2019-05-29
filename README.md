@@ -1,4 +1,6 @@
 #Error Parser
+[![](https://jitpack.io/v/velmie/api-error-parser.svg)](https://jitpack.io/#velmie/api-error-parser)
+
 Library for handling errors in the application based on codes.
 The code is written in Kotlin/Native with compilation under JVM/Android, JS, Swift.
 
@@ -88,6 +90,8 @@ val parserResponse: ParserResponseEntity<UserEntity> = errorParser.parse(serverR
                               
                               
 ```
+
+####Gradle
 Add it in your **root build.gradle** at the end of repositories:
 ```groovy
 allprojects {
@@ -103,4 +107,24 @@ dependencies {
          ...
 	 implementation 'com.github.velmie:api-error-parser:Tag'
 }
+```
+####Maven
+
+Add the JitPack repository to your build file:
+```XML
+<repositories>
+	<repository>
+	    <id>jitpack.io</id>
+	    <url>https://jitpack.io</url>
+	</repository>
+</repositories>
+```
+
+Add the dependency:
+```XML
+<dependency>
+    <groupId>com.github.velmie</groupId>
+    <artifactId>api-error-parser</artifactId>
+    <version>Tag</version>
+</dependency>
 ```
